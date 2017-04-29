@@ -35,9 +35,9 @@ public class NormalPolishNotationTest {
 
     @Test
     public void testSimpleSubtraction() {
-        String input = "− 5 6";
+        String input = "- 10 6";
         String testEndPoint = endPoint + input;
-        int result = 11;
+        int result = 4;
 
         getResponse(testEndPoint, input, result);
     }
@@ -63,16 +63,16 @@ public class NormalPolishNotationTest {
     @Test
     public void testSimpleDivide() {
         String input = "/ 20 5";
+        input = "4";
         String testEndPoint = endPoint + input;
         int result = 4;
 
-        get500Response(testEndPoint, 400);
-//        getResponse(testEndPoint, input,  result);
+        getResponse(testEndPoint, input,  result);
     }
 
     @Test
     public void testNoCalculation() {
-        System.out.println("The instruction page does no clarify this acceptance criteria");
+        System.out.println("This acceptance criteria is not defined");
         String input = "20 5";
         String testEndPoint = endPoint + input;
         int result = 20;
@@ -87,7 +87,6 @@ public class NormalPolishNotationTest {
         int result = 4;
 
         getResponse(testEndPoint, input,  result);
-
     }
 
     @Test
@@ -99,28 +98,84 @@ public class NormalPolishNotationTest {
     }
 
     @Test
-    public void testFractionInputsOnLastNumber() {
+    public void testFractionInputsOnSecondNumber() {
         String input = "+ 1 3.5";
         String testEndPoint = endPoint + input;
+        int result = 4;
 
 //        get500Response(testEndPoint);
-        get500Response(testEndPoint, 200);
+        getResponse(testEndPoint, input.substring(0, input.length()-2), result);
     }
 
     @Test
-    public void testComplexEquationsAreNotSupported() {
-        String input = "* (− 7 4) 7";
+    public void testNegativeResultsAreSupported() {
+        String input = "- 5 9";
         String testEndPoint = endPoint + input;
+        int result = -4;
 
-        get500Response(testEndPoint);
+        getResponse(testEndPoint, input,  result);
+    }
+
+    @Test
+    public void testComplexEquationsAreSupported() {
+        String input = "* - 9 6 4";
+        String testEndPoint = endPoint + input;
+        int result = 12;
+
+        getResponse(testEndPoint, input,  result);
+    }
+
+    @Test
+    public void testNegativeComplexResultsAreSupported() {
+        String input = "* - 5 6 7";
+        String testEndPoint = endPoint + input;
+        int result = -7;
+
+        getResponse(testEndPoint, input,  result);
+    }
+
+    @Test
+    public void testNegativeFirstNumberIsSupported() {
+        String input = "* -5 3";
+        String testEndPoint = endPoint + input;
+        int result = -15;
+
+        getResponse(testEndPoint, input,  result);
+    }
+
+    @Test
+    public void testNegativeSecondNumberIsSupported() {
+        String input = "- 3 -4";
+        String testEndPoint = endPoint + input;
+        int result = 7;
+
+        getResponse(testEndPoint, input,  result);
+    }
+
+    @Test
+    public void testMultipleNegativeInputAreSupported() {
+        String input = "* -5 -3";
+        String testEndPoint = endPoint + input;
+        int result = 15;
+
+        getResponse(testEndPoint, input,  result);
+    }
+
+    @Test
+    public void testMinusMultipleNegativeInputs() {
+        String input = "- -5 -3";
+        String testEndPoint = endPoint + input;
+        int result = -2;
+
+        getResponse(testEndPoint, input,  result);
     }
 
     private void get500Response(String testEndPoint) {
-        get500Response(testEndPoint, 500);
+        getErrorResponse(testEndPoint, 500);
     }
 
 
-    private void get500Response(String testEndPoint, int error) {
+    private void getErrorResponse(String testEndPoint, int error) {
         given().
                 when().
                 get(testEndPoint).
@@ -130,16 +185,16 @@ public class NormalPolishNotationTest {
 
     private void getResponse(String testEndPoint, String expression, int result) {
         Response response = given().
-                    when().
-                            get(testEndPoint).
-                    then().
-                            statusCode(200).
-                            contentType(ContentType.JSON).
-                            body(matchesJsonSchemaInClasspath("tax-calculator-schema.json")).
-                            body("expression", equalTo(expression)).
-                            body("result", equalTo(result)).
-                            extract().
-                            response();
+                when().
+                get(testEndPoint).
+                then().
+                statusCode(200).
+                contentType(ContentType.JSON).
+                body(matchesJsonSchemaInClasspath("tax-calculator-schema.json")).
+                body("expression", equalTo(expression)).
+                body("result", equalTo(result)).
+                extract().
+                response();
 
         System.out.println("JSON Response: " + response.asString());
     }
