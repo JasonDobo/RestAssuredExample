@@ -66,7 +66,8 @@ public class NormalPolishNotationTest {
         String testEndPoint = endPoint + input;
         int result = 4;
 
-        getResponse(testEndPoint, input,  result);
+        get500Response(testEndPoint, 400);
+//        getResponse(testEndPoint, input,  result);
     }
 
     @Test
@@ -102,7 +103,8 @@ public class NormalPolishNotationTest {
         String input = "+ 1 3.5";
         String testEndPoint = endPoint + input;
 
-        get500Response(testEndPoint);
+//        get500Response(testEndPoint);
+        get500Response(testEndPoint, 200);
     }
 
     @Test
@@ -114,13 +116,17 @@ public class NormalPolishNotationTest {
     }
 
     private void get500Response(String testEndPoint) {
+        get500Response(testEndPoint, 500);
+    }
+
+
+    private void get500Response(String testEndPoint, int error) {
         given().
                 when().
                 get(testEndPoint).
                 then().
-                statusCode(500);
+                statusCode(error);
     }
-
 
     private void getResponse(String testEndPoint, String expression, int result) {
         Response response = given().
