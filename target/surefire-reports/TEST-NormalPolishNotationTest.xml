@@ -1,79 +1,83 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="12" failures="0" name="NormalPolishNotationTest" time="3.764" errors="0" skipped="0">
+<testsuite tests="18" failures="0" name="NormalPolishNotationTest" time="27.581" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib"/>
-    <property name="java.vm.version" value="25.25-b02"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.131-b11"/>
+    <property name="user.country.format" value="GB"/>
     <property name="gopherProxySet" value="false"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/jasondobo/Development/RestAssuredExample"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/jason.dobo/Code/RestAssuredExample"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="user.country" value="GB"/>
+    <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/jasondobo/Development/RestAssuredExample"/>
-    <property name="java.runtime.version" value="1.8.0_25-b17"/>
+    <property name="user.dir" value="/Users/jason.dobo/Code/RestAssuredExample"/>
+    <property name="java.runtime.version" value="1.8.0_131-b11"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/endorsed"/>
     <property name="os.arch" value="x86_64"/>
-    <property name="java.io.tmpdir" value="/var/folders/9f/qcf2sxsj1w79jbhtzkqzmwxc0000gn/T/"/>
+    <property name="java.io.tmpdir" value="/var/folders/nj/hc5s7mp16w74361c9fzrxnjmp61hq4/T/"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
     <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.5.0/libexec/bin/m2.conf"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/Users/jasondobo/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.library.path" value="/Users/jason.dobo/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="maven.conf" value="/usr/local/Cellar/maven/3.5.0/libexec/conf"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="10.12.3"/>
+    <property name="os.version" value="10.11.6"/>
     <property name="library.jansi.path" value="/usr/local/Cellar/maven/3.5.0/libexec/lib/jansi-native/osx64"/>
-    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="user.home" value="/Users/jasondobo"/>
+    <property name="user.home" value="/Users/jason.dobo"/>
     <property name="user.timezone" value="Europe/London"/>
     <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="user.name" value="jasondobo"/>
+    <property name="user.name" value="jason.dobo"/>
     <property name="java.class.path" value="/usr/local/Cellar/maven/3.5.0/libexec/boot/plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher package -U"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -U clean install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.8.0_25"/>
-    <property name="java.ext.dirs" value="/Users/jasondobo/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
-    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/classes"/>
+    <property name="java.version" value="1.8.0_131"/>
+    <property name="java.ext.dirs" value="/Users/jason.dobo/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="maven.home" value="/usr/local/Cellar/maven/3.5.0/libexec"/>
     <property name="file.separator" value="/"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
-    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="NormalPolishNotationTest" name="testComplexEquationsAreNotSupported" time="1.04"/>
-  <testcase classname="NormalPolishNotationTest" name="testSimpleMultiplication" time="0.802"/>
-  <testcase classname="NormalPolishNotationTest" name="testSimpleAddition" time="0.211"/>
-  <testcase classname="NormalPolishNotationTest" name="testThirdArgumentIsIgnored" time="0.201"/>
-  <testcase classname="NormalPolishNotationTest" name="testSimpleDivide" time="0.176"/>
-  <testcase classname="NormalPolishNotationTest" name="testSimpleSubtraction" time="0.203"/>
-  <testcase classname="NormalPolishNotationTest" name="testFractionInputsOnFirstNumber" time="0.178"/>
-  <testcase classname="NormalPolishNotationTest" name="testEndpointIsAvailableWithNoInputs" time="0.181"/>
-  <testcase classname="NormalPolishNotationTest" name="testInvalidInputString" time="0.178"/>
-  <testcase classname="NormalPolishNotationTest" name="testValidZeroInput" time="0.204"/>
-  <testcase classname="NormalPolishNotationTest" name="testFractionInputsOnLastNumber" time="0.186"/>
-  <testcase classname="NormalPolishNotationTest" name="testNoCalculation" time="0.204"/>
+  <testcase classname="NormalPolishNotationTest" name="testNegativeResultsAreSupported" time="23.841"/>
+  <testcase classname="NormalPolishNotationTest" name="testComplexEquationsAreSupported" time="0.223"/>
+  <testcase classname="NormalPolishNotationTest" name="testSimpleMultiplication" time="0.215"/>
+  <testcase classname="NormalPolishNotationTest" name="testMinusMultipleNegativeInputs" time="0.223"/>
+  <testcase classname="NormalPolishNotationTest" name="testNegativeComplexResultsAreSupported" time="0.198"/>
+  <testcase classname="NormalPolishNotationTest" name="testSimpleAddition" time="0.216"/>
+  <testcase classname="NormalPolishNotationTest" name="testNegativeSecondNumberIsSupported" time="0.219"/>
+  <testcase classname="NormalPolishNotationTest" name="testNegativeFirstNumberIsSupported" time="0.218"/>
+  <testcase classname="NormalPolishNotationTest" name="testThirdArgumentIsIgnored" time="0.199"/>
+  <testcase classname="NormalPolishNotationTest" name="testSimpleDivide" time="0.203"/>
+  <testcase classname="NormalPolishNotationTest" name="testSimpleSubtraction" time="0.216"/>
+  <testcase classname="NormalPolishNotationTest" name="testFractionInputsOnFirstNumber" time="0.231"/>
+  <testcase classname="NormalPolishNotationTest" name="testEndpointIsAvailableWithNoInputs" time="0.339"/>
+  <testcase classname="NormalPolishNotationTest" name="testMultipleNegativeInputAreSupported" time="0.215"/>
+  <testcase classname="NormalPolishNotationTest" name="testInvalidInputString" time="0.199"/>
+  <testcase classname="NormalPolishNotationTest" name="testValidZeroInput" time="0.225"/>
+  <testcase classname="NormalPolishNotationTest" name="testFractionInputsOnSecondNumber" time="0.21"/>
+  <testcase classname="NormalPolishNotationTest" name="testNoCalculation" time="0.191"/>
 </testsuite>

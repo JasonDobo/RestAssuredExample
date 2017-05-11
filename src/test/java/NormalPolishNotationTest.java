@@ -11,11 +11,25 @@ public class NormalPolishNotationTest {
 
     final String username = "home";
     final String password = "test";
-    final String endPoint = "http://" + username + ":" + password + "@home-assignment.herokuapp.com/api/calculate/";
+    final String protocol = "http://";
+    final String address = "@home-assignment.herokuapp.com/api/calculate/";
+    final String endPoint = protocol + username + ":" + password + address;
 
     @Test
     public void testEndpointIsAvailableWithNoInputs() {
         given().when().get(endPoint).then().statusCode(200);
+    }
+
+    @Test
+    public void testInvalidUsername() {
+        String invalidCredentialsEndPoint = protocol + "jason" + ":" + password + address;
+        given().when().get(invalidCredentialsEndPoint).then().statusCode(401);
+    }
+
+    @Test
+    public void testInvalidPassword() {
+        String invalidCredentialsEndPoint = protocol + username + ":" + "password" + address;
+        given().when().get(invalidCredentialsEndPoint).then().statusCode(401);
     }
 
     @Test

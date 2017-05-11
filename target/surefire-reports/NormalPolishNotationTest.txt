@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: NormalPolishNotationTest
 -------------------------------------------------------------------------------
-Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.805 sec
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 27.651 sec
