@@ -17,7 +17,11 @@ public class NormalPolishNotationTest {
 
     @Test
     public void testEndpointIsAvailableWithNoInputs() {
-        given().when().get(endPoint).then().statusCode(200);
+        given().
+                when().
+                    get(endPoint).
+                then().
+                    statusCode(200);
     }
 
     @Test
@@ -36,6 +40,7 @@ public class NormalPolishNotationTest {
     public void testInvalidInputString() {
         String input = "string";
         String testEndPoint = endPoint + input;
+
         get500Response(testEndPoint);
     }
 
@@ -76,8 +81,8 @@ public class NormalPolishNotationTest {
 
     @Test
     public void testSimpleDivide() {
+        System.out.println("I could not get this test to work, I assume that I'm using a invalid argument for divide");
         String input = "/ 20 5";
-        input = "4";
         String testEndPoint = endPoint + input;
         int result = 4;
 
@@ -86,7 +91,7 @@ public class NormalPolishNotationTest {
 
     @Test
     public void testNoCalculation() {
-        System.out.println("This acceptance criteria is not defined");
+        System.out.println("This acceptance criteria is not defined, so I've assumed when no calcuation is passed the first number is returned");
         String input = "20 5";
         String testEndPoint = endPoint + input;
         int result = 20;
@@ -115,10 +120,10 @@ public class NormalPolishNotationTest {
     public void testFractionInputsOnSecondNumber() {
         String input = "+ 1 3.5";
         String testEndPoint = endPoint + input;
-        int result = 4;
+        double result = 4.5;
 
 //        get500Response(testEndPoint);
-        getResponse(testEndPoint, input.substring(0, input.length()-2), result);
+        getResponse(testEndPoint, input.substring(0, input.length()-2), (int) result);
     }
 
     @Test
@@ -184,6 +189,26 @@ public class NormalPolishNotationTest {
         getResponse(testEndPoint, input,  result);
     }
 
+    @Test
+    public void testLongEquations() {
+
+    }
+
+    @Test
+    public void testLargeNumberInput() {
+
+    }
+
+    @Test
+    public void testLargeNumberOutput() {
+
+    }
+
+    @Test
+    public void testLargeNumberInternalEquation() {
+
+    }
+
     private void get500Response(String testEndPoint) {
         getErrorResponse(testEndPoint, 500);
     }
@@ -200,15 +225,15 @@ public class NormalPolishNotationTest {
     private void getResponse(String testEndPoint, String expression, int result) {
         Response response = given().
                 when().
-                get(testEndPoint).
+                    get(testEndPoint).
                 then().
-                statusCode(200).
-                contentType(ContentType.JSON).
-                body(matchesJsonSchemaInClasspath("tax-calculator-schema.json")).
-                body("expression", equalTo(expression)).
-                body("result", equalTo(result)).
+                    statusCode(200).
+                    contentType(ContentType.JSON).
+                    body(matchesJsonSchemaInClasspath("tax-calculator-schema.json")).
+                    body("expression", equalTo(expression)).
+                    body("result", equalTo(result)).
                 extract().
-                response();
+                    response();
 
         System.out.println("JSON Response: " + response.asString());
     }

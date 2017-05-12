@@ -11,6 +11,10 @@ General:
 Each test will verify the response code and JSON schema
 testEndpointIsAvailableWithNoInputs:
 - End point returns is available
+testInvalidUsername:
+- Verify requests fails with invalid username
+testInvalidPassword:
+- Verify requests fails with invalid password
 testInvalidInputString:
 - End point returns a 500 error, when no arguments are given
 testValidZeroInput:
@@ -59,3 +63,13 @@ If I had more time I would repeat "testThirdArgumentIsIgnored" with more argumen
 
 Failing Tests:
 Currently 2 tests fail, as I am unsure as to the expected acceptance criteria of the API, these will need to be updated
+
+To be added:
+byte        127
+short       short s = 10000                            32 767
+int         int decVal = 26                     2 147 483 647
+long        long i = 12345678910L   9 223 372 036 854 775 807
+float       float f1  = 123.4f
+double      double d1 = 123.4
+
+short int <= int <= long int
