@@ -26,13 +26,13 @@ public class NormalPolishNotationTest {
 
     @Test
     public void testInvalidUsername() {
-        String invalidCredentialsEndPoint = protocol + "jason" + ":" + password + address;
+        String invalidCredentialsEndPoint = protocol + "invalid" + ":" + password + address;
         given().when().get(invalidCredentialsEndPoint).then().statusCode(401);
     }
 
     @Test
     public void testInvalidPassword() {
-        String invalidCredentialsEndPoint = protocol + username + ":" + "password" + address;
+        String invalidCredentialsEndPoint = protocol + username + ":" + "unknown" + address;
         given().when().get(invalidCredentialsEndPoint).then().statusCode(401);
     }
 
@@ -91,7 +91,7 @@ public class NormalPolishNotationTest {
 
     @Test
     public void testNoCalculation() {
-        System.out.println("This acceptance criteria is not defined, so I've assumed when no calcuation is passed the first number is returned");
+        System.out.println("No acceptance criteria defined, so I've assumed actual response is correct");
         String input = "20 5";
         String testEndPoint = endPoint + input;
         int result = 20;
