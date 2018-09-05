@@ -40,6 +40,23 @@ public class PostCodeTest {
         System.out.println(response.toString());
         ArrayList j = response.body().jsonPath().get("result.result[0].postcode");
         System.out.println(j.size());
+    }
 
+    @Test
+    public void testJson() {
+        Response response = given().
+                when().
+                    contentType("application/json").
+                    body("{ \"postcodes\" : [\"NW2 7DW\",\"NW10 2AP\"] }").
+                    post(url).
+                then().
+                    contentType(ContentType.JSON).
+                    statusCode(200).
+                    extract().
+                    response();
+
+        ValidatableResponse json = response.then().statusCode(200).log().ifError();
+        JsonPath jsonPath = new JsonPath(json.extract().asString());
+        String pathString = jsonPath.getString("result.result[0].postcode");
     }
 }
